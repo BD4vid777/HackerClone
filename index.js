@@ -1,1 +1,7 @@
-console.log("This is just a welcome message!")
+class App {
+    constructor() {
+        console.log('app-works')
+    }
+}
+
+new App();
