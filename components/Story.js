@@ -1,5 +1,4 @@
 export default function Story(story) {
-    console.log(story);
     return `
     <div class="story">
       <div> 
@@ -16,9 +15,10 @@ export default function Story(story) {
             ${story.comments_count} comments
           </a>
           |
-          <span class="favorite">
-            <img class="heart" src="https://img.icons8.com/material-outlined/24/000000/like--v1.png"/>
-            Add To Favorites
+          <span class="favorite" data-story='${JSON.stringify(story)}'>
+            ${story.isFavorite ? 
+            '<img class="heart" src="https://img.icons8.com/material-rounded/24/000000/like--v1.png" alt="rounded heart"/> Remove from Favorites' : 
+            '<img class="heart" src="https://img.icons8.com/material-outlined/24/000000/like--v1.png" alt="outlined heart"/> Add To Favorites'}
           </span>
         </div>
       </div>
